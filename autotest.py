@@ -24,12 +24,12 @@ SQL_EXPORT_DB = 'ycsb'
 RECORDS_COL = 'usertable'
 
 DBS = [MSSQL, MONGODB]
-WORKLOADS = ['a']
-RC_OP_COUPLES = [(150, 100)]
+WORKLOADS = ['a', 'b', 'c', 'd', 'e', 'f']
+RC_OP_COUPLES = [(10, 5), (20, 10)]
 # THREADS_NO = [1] + list(range(2, 33, 2))
-THREADS_NO = [1, 2, 4, 8]
-RUNS_NO = 5
-LOAD_TC = 8
+THREADS_NO = [1, 2, 4]
+RUNS_NO = 3
+LOAD_TC = 4
 
 
 def run_wlcmd(dbtype, workload, recordcount, operationcount, threadcount, runnumber):
@@ -93,7 +93,10 @@ def calmeans(dbtype, workload, recordcount, operationcount, threadcount):
         for rn in range(1, RUNS_NO+1):
             filename = resultpath+'run'+str(rn)+".txt"
             gp = re.search(r".*"+rq+".*\), (.*)",
-                           open(filename, "r").read()).group(1)
+                           open(filename, "r").read())
+            if gp == None:
+                continue
+            gp = gp.group(1)
             num = float(gp)
             mean = mean * total / (total + 1) + num / (total + 1)
             total += 1
@@ -116,8 +119,7 @@ def clear_database(dbtype):
 
 
 def remove_extras(dbtype, rc_count):
-    # to be filled
-    return
+    pass
 
 
 for db in DBS:
@@ -139,5 +141,6 @@ for db in DBS:
                 for run in range(1, RUNS_NO+1):
                     run_wlcmd(db, wl, rc_count, op_count, thrd, run)
                     if wl == 'd' or wl == 'e':
-                        remove_extras(db, rc_count)
+                        clear_database(db)
+                        run_wlcmd(db, wl, rc_count, None, LOAD_TC, 0)
                 calmeans(db, wl, rc_count, op_count, thrd)

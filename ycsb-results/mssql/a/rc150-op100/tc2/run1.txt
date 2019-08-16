@@ -3,8 +3,8 @@ Adding shard node URL: jdbc:sqlserver://localhost:1433;databaseName=ycsb
 Adding shard node URL: jdbc:sqlserver://localhost:1433;databaseName=ycsb
 Using shards: 1, batchSize:-1, fetchSize: -1
 Using shards: 1, batchSize:-1, fetchSize: -1
-[OVERALL], RunTime(ms), 4454
-[OVERALL], Throughput(ops/sec), 22.4517287831163
+[OVERALL], RunTime(ms), 3010
+[OVERALL], Throughput(ops/sec), 33.222591362126245
 [TOTAL_GCS_PS_Scavenge], Count, 0
 [TOTAL_GC_TIME_PS_Scavenge], Time(ms), 0
 [TOTAL_GC_TIME_%_PS_Scavenge], Time(%), 0.0
@@ -14,23 +14,23 @@ Using shards: 1, batchSize:-1, fetchSize: -1
 [TOTAL_GCs], Count, 0
 [TOTAL_GC_TIME], Time(ms), 0
 [TOTAL_GC_TIME_%], Time(%), 0.0
-[READ], Operations, 46
-[READ], AverageLatency(us), 34789.02173913043
-[READ], MinLatency(us), 1056
-[READ], MaxLatency(us), 124095
-[READ], 95thPercentileLatency(us), 88127
-[READ], 99thPercentileLatency(us), 124095
-[READ], Return=OK, 46
+[READ], Operations, 48
+[READ], AverageLatency(us), 21622.25
+[READ], MinLatency(us), 853
+[READ], MaxLatency(us), 83967
+[READ], 95thPercentileLatency(us), 44159
+[READ], 99thPercentileLatency(us), 83967
+[READ], Return=OK, 48
 [CLEANUP], Operations, 2
-[CLEANUP], AverageLatency(us), 316.0
-[CLEANUP], MinLatency(us), 131
-[CLEANUP], MaxLatency(us), 501
-[CLEANUP], 95thPercentileLatency(us), 501
-[CLEANUP], 99thPercentileLatency(us), 501
-[UPDATE], Operations, 54
-[UPDATE], AverageLatency(us), 111918.22222222222
-[UPDATE], MinLatency(us), 47584
-[UPDATE], MaxLatency(us), 401919
-[UPDATE], 95thPercentileLatency(us), 210175
-[UPDATE], 99thPercentileLatency(us), 334079
-[UPDATE], Return=OK, 54
+[CLEANUP], AverageLatency(us), 228.0
+[CLEANUP], MinLatency(us), 71
+[CLEANUP], MaxLatency(us), 385
+[CLEANUP], 95thPercentileLatency(us), 385
+[CLEANUP], 99thPercentileLatency(us), 385
+[UPDATE], Operations, 52
+[UPDATE], AverageLatency(us), 76313.23076923077
+[UPDATE], MinLatency(us), 32928
+[UPDATE], MaxLatency(us), 658943
+[UPDATE], 95thPercentileLatency(us), 88959
+[UPDATE], 99thPercentileLatency(us), 610303
+[UPDATE], Return=OK, 52

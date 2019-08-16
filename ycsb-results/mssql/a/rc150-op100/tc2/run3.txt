@@ -3,8 +3,8 @@ Adding shard node URL: jdbc:sqlserver://localhost:1433;databaseName=ycsb
 Adding shard node URL: jdbc:sqlserver://localhost:1433;databaseName=ycsb
 Using shards: 1, batchSize:-1, fetchSize: -1
 Using shards: 1, batchSize:-1, fetchSize: -1
-[OVERALL], RunTime(ms), 3647
-[OVERALL], Throughput(ops/sec), 27.419797093501508
+[OVERALL], RunTime(ms), 2351
+[OVERALL], Throughput(ops/sec), 42.53509145044662
 [TOTAL_GCS_PS_Scavenge], Count, 0
 [TOTAL_GC_TIME_PS_Scavenge], Time(ms), 0
 [TOTAL_GC_TIME_%_PS_Scavenge], Time(%), 0.0
@@ -14,23 +14,23 @@ Using shards: 1, batchSize:-1, fetchSize: -1
 [TOTAL_GCs], Count, 0
 [TOTAL_GC_TIME], Time(ms), 0
 [TOTAL_GC_TIME_%], Time(%), 0.0
-[READ], Operations, 53
-[READ], AverageLatency(us), 33006.660377358494
-[READ], MinLatency(us), 704
-[READ], MaxLatency(us), 299263
-[READ], 95thPercentileLatency(us), 78463
-[READ], 99thPercentileLatency(us), 156415
-[READ], Return=OK, 53
+[READ], Operations, 57
+[READ], AverageLatency(us), 17888.157894736843
+[READ], MinLatency(us), 1400
+[READ], MaxLatency(us), 81343
+[READ], 95thPercentileLatency(us), 52095
+[READ], 99thPercentileLatency(us), 54111
+[READ], Return=OK, 57
 [CLEANUP], Operations, 2
-[CLEANUP], AverageLatency(us), 194.5
-[CLEANUP], MinLatency(us), 57
-[CLEANUP], MaxLatency(us), 332
-[CLEANUP], 95thPercentileLatency(us), 332
-[CLEANUP], 99thPercentileLatency(us), 332
-[UPDATE], Operations, 47
-[UPDATE], AverageLatency(us), 97148.25531914894
-[UPDATE], MinLatency(us), 43872
-[UPDATE], MaxLatency(us), 298751
-[UPDATE], 95thPercentileLatency(us), 168447
-[UPDATE], 99thPercentileLatency(us), 298751
-[UPDATE], Return=OK, 47
+[CLEANUP], AverageLatency(us), 283.5
+[CLEANUP], MinLatency(us), 129
+[CLEANUP], MaxLatency(us), 438
+[CLEANUP], 95thPercentileLatency(us), 438
+[CLEANUP], 99thPercentileLatency(us), 438
+[UPDATE], Operations, 43
+[UPDATE], AverageLatency(us), 63309.767441860466
+[UPDATE], MinLatency(us), 33280
+[UPDATE], MaxLatency(us), 123007
+[UPDATE], 95thPercentileLatency(us), 96831
+[UPDATE], 99thPercentileLatency(us), 123007
+[UPDATE], Return=OK, 43

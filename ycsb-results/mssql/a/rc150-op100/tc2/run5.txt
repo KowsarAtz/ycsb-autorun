@@ -3,8 +3,8 @@ Adding shard node URL: jdbc:sqlserver://localhost:1433;databaseName=ycsb
 Adding shard node URL: jdbc:sqlserver://localhost:1433;databaseName=ycsb
 Using shards: 1, batchSize:-1, fetchSize: -1
 Using shards: 1, batchSize:-1, fetchSize: -1
-[OVERALL], RunTime(ms), 3168
-[OVERALL], Throughput(ops/sec), 31.565656565656564
+[OVERALL], RunTime(ms), 2999
+[OVERALL], Throughput(ops/sec), 33.344448149383126
 [TOTAL_GCS_PS_Scavenge], Count, 0
 [TOTAL_GC_TIME_PS_Scavenge], Time(ms), 0
 [TOTAL_GC_TIME_%_PS_Scavenge], Time(%), 0.0
@@ -14,23 +14,23 @@ Using shards: 1, batchSize:-1, fetchSize: -1
 [TOTAL_GCs], Count, 0
 [TOTAL_GC_TIME], Time(ms), 0
 [TOTAL_GC_TIME_%], Time(%), 0.0
-[READ], Operations, 54
-[READ], AverageLatency(us), 27883.666666666668
-[READ], MinLatency(us), 1053
-[READ], MaxLatency(us), 100735
-[READ], 95thPercentileLatency(us), 79743
-[READ], 99thPercentileLatency(us), 91071
-[READ], Return=OK, 54
+[READ], Operations, 44
+[READ], AverageLatency(us), 22988.204545454544
+[READ], MinLatency(us), 922
+[READ], MaxLatency(us), 82111
+[READ], 95thPercentileLatency(us), 47935
+[READ], 99thPercentileLatency(us), 82111
+[READ], Return=OK, 44
 [CLEANUP], Operations, 2
-[CLEANUP], AverageLatency(us), 212.0
-[CLEANUP], MinLatency(us), 65
-[CLEANUP], MaxLatency(us), 359
-[CLEANUP], 95thPercentileLatency(us), 359
-[CLEANUP], 99thPercentileLatency(us), 359
-[UPDATE], Operations, 46
-[UPDATE], AverageLatency(us), 82379.13043478261
-[UPDATE], MinLatency(us), 37152
-[UPDATE], MaxLatency(us), 152575
-[UPDATE], 95thPercentileLatency(us), 122687
-[UPDATE], 99thPercentileLatency(us), 152575
-[UPDATE], Return=OK, 46
+[CLEANUP], AverageLatency(us), 162.0
+[CLEANUP], MinLatency(us), 50
+[CLEANUP], MaxLatency(us), 274
+[CLEANUP], 95thPercentileLatency(us), 274
+[CLEANUP], 99thPercentileLatency(us), 274
+[UPDATE], Operations, 56
+[UPDATE], AverageLatency(us), 71504.57142857143
+[UPDATE], MinLatency(us), 36384
+[UPDATE], MaxLatency(us), 122175
+[UPDATE], 95thPercentileLatency(us), 104831
+[UPDATE], 99thPercentileLatency(us), 118975
+[UPDATE], Return=OK, 56

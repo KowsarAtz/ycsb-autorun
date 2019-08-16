@@ -3,8 +3,8 @@ Adding shard node URL: jdbc:sqlserver://localhost:1433;databaseName=ycsb
 Adding shard node URL: jdbc:sqlserver://localhost:1433;databaseName=ycsb
 Using shards: 1, batchSize:-1, fetchSize: -1
 Using shards: 1, batchSize:-1, fetchSize: -1
-[OVERALL], RunTime(ms), 4207
-[OVERALL], Throughput(ops/sec), 23.76990729736154
+[OVERALL], RunTime(ms), 2673
+[OVERALL], Throughput(ops/sec), 37.41114852225963
 [TOTAL_GCS_PS_Scavenge], Count, 0
 [TOTAL_GC_TIME_PS_Scavenge], Time(ms), 0
 [TOTAL_GC_TIME_%_PS_Scavenge], Time(%), 0.0
@@ -14,23 +14,23 @@ Using shards: 1, batchSize:-1, fetchSize: -1
 [TOTAL_GCs], Count, 0
 [TOTAL_GC_TIME], Time(ms), 0
 [TOTAL_GC_TIME_%], Time(%), 0.0
-[READ], Operations, 55
-[READ], AverageLatency(us), 32369.145454545454
-[READ], MinLatency(us), 948
-[READ], MaxLatency(us), 90239
-[READ], 95thPercentileLatency(us), 79231
-[READ], 99thPercentileLatency(us), 89855
-[READ], Return=OK, 55
+[READ], Operations, 50
+[READ], AverageLatency(us), 23707.7
+[READ], MinLatency(us), 1154
+[READ], MaxLatency(us), 56031
+[READ], 95thPercentileLatency(us), 53919
+[READ], 99thPercentileLatency(us), 56031
+[READ], Return=OK, 50
 [CLEANUP], Operations, 2
-[CLEANUP], AverageLatency(us), 258.0
-[CLEANUP], MinLatency(us), 69
-[CLEANUP], MaxLatency(us), 447
-[CLEANUP], 95thPercentileLatency(us), 447
-[CLEANUP], 99thPercentileLatency(us), 447
-[UPDATE], Operations, 45
-[UPDATE], AverageLatency(us), 123366.04444444444
-[UPDATE], MinLatency(us), 42688
-[UPDATE], MaxLatency(us), 954879
-[UPDATE], 95thPercentileLatency(us), 188671
-[UPDATE], 99thPercentileLatency(us), 954879
-[UPDATE], Return=OK, 45
+[CLEANUP], AverageLatency(us), 219.5
+[CLEANUP], MinLatency(us), 71
+[CLEANUP], MaxLatency(us), 368
+[CLEANUP], 95thPercentileLatency(us), 368
+[CLEANUP], 99thPercentileLatency(us), 368
+[UPDATE], Operations, 50
+[UPDATE], AverageLatency(us), 63387.84
+[UPDATE], MinLatency(us), 32768
+[UPDATE], MaxLatency(us), 143743
+[UPDATE], 95thPercentileLatency(us), 111999
+[UPDATE], 99thPercentileLatency(us), 143743
+[UPDATE], Return=OK, 50

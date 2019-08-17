@@ -3,33 +3,7 @@ import pymssql
 import os
 import re
 from definereqs import definereqs
-
-LOAD = 0
-RUN = 1
-MONGODB = 0
-MONGODB_CLUSTER = 1
-MSSQL = 2
-
-REQS = None
-REQS2 = None
-mssql_connection = None
-mongodb_client = None
-
-HOSTIP = "127.0.0.1"
-BASEPATH = "/home/atz2nd/Desktop/editycsb/YCSB/"
-RESULTPATH = "./ycsb-results/"
-MONGO_URL = "mongodb://%s:27017" % HOSTIP
-MONGO_CLUSTER_URL = None
-SQL_EXPORT_DB = 'ycsb'
-RECORDS_COL = 'usertable'
-
-DBS = [MSSQL, MONGODB]
-WORKLOADS = ['a', 'b', 'c', 'd', 'e', 'f']
-RC_OP_COUPLES = [(10, 5), (20, 10)]
-# THREADS_NO = [1] + list(range(2, 33, 2))
-THREADS_NO = [1, 2, 4]
-RUNS_NO = 3
-LOAD_TC = 4
+from props import *
 
 
 def run_wlcmd(dbtype, workload, recordcount, operationcount, threadcount, runnumber):
@@ -49,9 +23,9 @@ def run_wlcmd(dbtype, workload, recordcount, operationcount, threadcount, runnum
     if dbtype == MONGODB or dbtype == MONGODB_CLUSTER:
         dbname = "mongodb"
         if dbtype == MONGODB:
-            cmd += " mongodb -s -p mongodb.url=" + MONGO_URL
+            cmd += " mongodb-async -s -p mongodb.url=" + MONGO_URL
         else:
-            cmd += " mongodb -s -p mongodb.url=" + MONGO_CLUSTER_URL
+            cmd += " mongodb-async -s -p mongodb.url=" + MONGO_CLUSTER_URL
     elif dbtype == MSSQL:
         dbname = "mssql"
         cmd += " mssql -s -P " + BASEPATH + "mssql/db.properties"
@@ -125,7 +99,7 @@ def remove_extras(dbtype, rc_count):
 for db in DBS:
     if db == MSSQL:
         mssql_connection = pymssql.connect(
-            server=HOSTIP, user='sa', password='MSSQL-pwd', database=SQL_EXPORT_DB)
+            server=HOSTIP, user=MSSQLUSER, password=MSSQLPWD, database=SQL_EXPORT_DB)
     elif db == MONGODB:
         mongodb_client = pymongo.MongoClient(MONGO_URL)
     elif db == MONGODB_CLUSTER:

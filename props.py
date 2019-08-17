@@ -26,3 +26,12 @@ RC_OP_COUPLES = [(1000, 1000)]
 THREADS_NO = [1, 2, 4, 8, 12, 16]
 RUNS_NO = 3
 LOAD_TC = 8
+
+CHARTRESULTPATH = "./chart-results/"
+CHARTSREFRENCE = "./ycsb-results-bothok-singlemongoMSSQL/"
+CHARTSWLSREFRENCE = ['a', 'b', 'c', 'd', 'e', 'f']
+CHARTCOUNTSREFRENCE = [(1000,1000)]
+CHARTTHREADCOUNTS = [1, 2]
+CHARTWIDTH = 1000
+CHARTHEIGHT = 500
+COMPARINGDBS_SET = [['mssql', 'mongodb']]

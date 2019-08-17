@@ -176,5 +176,5 @@ def meansfilenumbers(base_path, dbname, workload, rec_count, op_count, thrd_coun
     wl = definereqs(workload)[0]
     for rq in wl:
         gp = re.search(r""+rq+".*?(\d*\.\d*)", open(filename, "r").read())
-        result += [(definereqs(workload)[2][wl.index(rq)] , gp.group(1))]
+        result += [(definereqs(workload)[2][wl.index(rq)] , float(gp.group(1)))]
     return result

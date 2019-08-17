@@ -105,7 +105,8 @@ for db in DBS:
     elif db == MONGODB_CLUSTER:
         mongodb_client = pymongo.MongoClient(MONGO_CLUSTER_URL)
     for wl in WORKLOADS:
-        (REQS, REQS2) = definereqs(wl)
+        REQS = definereqs(wl)[0]
+        REQS2 = definereqs(wl)[1]
         for rc_op in RC_OP_COUPLES:
             rc_count = rc_op[0]
             op_count = rc_op[1]

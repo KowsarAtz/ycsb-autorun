@@ -1,0 +1,7 @@
+       | Throughput            |  357.6
+SCAN   | AverageLatency        |  6490.0
+SCAN   | 95thPercentileLatency |  22292.3
+SCAN   | 99thPercentileLatency |  36724.3
+INSERT | AverageLatency        |  9246.3
+INSERT | 95thPercentileLatency |  17276.3
+INSERT | 99thPercentileLatency |  18623.0

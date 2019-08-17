@@ -1,0 +1,33 @@
+/usr/lib/jvm/java-11-openjdk-11.0.4.11-0.el7_6.x86_64//bin/java  -classpath /mnt/hdd2/nosql-prj/YCSB/YCSB/conf:/mnt/hdd2/nosql-prj/YCSB/YCSB/core/target/core-0.17.0-SNAPSHOT.jar:/mnt/hdd2/nosql-prj/YCSB/YCSB/mongodb/target/mongodb-binding-0.17.0-SNAPSHOT.jar:/mnt/hdd2/nosql-prj/YCSB/YCSB/mongodb/target/dependency/HdrHistogram-2.1.9.jar:/mnt/hdd2/nosql-prj/YCSB/YCSB/mongodb/target/dependency/htrace-core4-4.2.0-incubating.jar:/mnt/hdd2/nosql-prj/YCSB/YCSB/mongodb/target/dependency/logback-classic-1.1.2.jar:/mnt/hdd2/nosql-prj/YCSB/YCSB/mongodb/target/dependency/logback-core-1.1.2.jar:/mnt/hdd2/nosql-prj/YCSB/YCSB/mongodb/target/dependency/mongodb-async-driver-2.0.1.jar:/mnt/hdd2/nosql-prj/YCSB/YCSB/mongodb/target/dependency/mongo-java-driver-3.8.0.jar:/mnt/hdd2/nosql-prj/YCSB/YCSB/mongodb/target/dependency/slf4j-api-1.7.25.jar:/mnt/hdd2/nosql-prj/YCSB/YCSB/mongodb/target/dependency/snappy-java-1.1.7.1.jar com.yahoo.ycsb.Client -t -db com.yahoo.ycsb.db.AsyncMongoDbClient -s -p mongodb.url=mongodb://172.16.13.26:27023 -P /mnt/hdd2/nosql-prj/YCSB/YCSB/workloads/workloade -p recordcount=1000 -threads 16 -p operationcount=1000
+mongo connection created with mongodb://172.16.13.26:27023
+[OVERALL], RunTime(ms), 696
+[OVERALL], Throughput(ops/sec), 1436.7816091954023
+[TOTAL_GCS_G1_Young_Generation], Count, 3
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 20
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 2.8735632183908044
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 3
+[TOTAL_GC_TIME], Time(ms), 20
+[TOTAL_GC_TIME_%], Time(%), 2.8735632183908044
+[CLEANUP], Operations, 16
+[CLEANUP], AverageLatency(us), 160.6875
+[CLEANUP], MinLatency(us), 1
+[CLEANUP], MaxLatency(us), 2531
+[CLEANUP], 95thPercentileLatency(us), 7
+[CLEANUP], 99thPercentileLatency(us), 2531
+[INSERT], Operations, 40
+[INSERT], AverageLatency(us), 9155.25
+[INSERT], MinLatency(us), 2798
+[INSERT], MaxLatency(us), 18303
+[INSERT], 95thPercentileLatency(us), 17951
+[INSERT], 99thPercentileLatency(us), 18303
+[INSERT], Return=OK, 40
+[SCAN], Operations, 960
+[SCAN], AverageLatency(us), 10107.930208333333
+[SCAN], MinLatency(us), 289
+[SCAN], MaxLatency(us), 64639
+[SCAN], 95thPercentileLatency(us), 17247
+[SCAN], 99thPercentileLatency(us), 55135
+[SCAN], Return=OK, 960

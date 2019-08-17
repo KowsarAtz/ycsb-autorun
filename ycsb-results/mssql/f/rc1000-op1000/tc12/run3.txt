@@ -1,0 +1,62 @@
+/usr/lib/jvm/java-11-openjdk-11.0.4.11-0.el7_6.x86_64//bin/java  -classpath /mnt/hdd2/nosql-prj/YCSB/YCSB/conf:/mnt/hdd2/nosql-prj/YCSB/YCSB/core/target/core-0.17.0-SNAPSHOT.jar:/mnt/hdd2/nosql-prj/YCSB/YCSB/mssql/src/main/conf:/mnt/hdd2/nosql-prj/YCSB/YCSB/mssql/target/jdbc-mssql-binding-0.17.0-SNAPSHOT.jar:/mnt/hdd2/nosql-prj/YCSB/YCSB/mssql/target/dependency/commons-collections-3.2.1.jar:/mnt/hdd2/nosql-prj/YCSB/YCSB/mssql/target/dependency/commons-lang-2.4.jar:/mnt/hdd2/nosql-prj/YCSB/YCSB/mssql/target/dependency/commons-pool-1.5.4.jar:/mnt/hdd2/nosql-prj/YCSB/YCSB/mssql/target/dependency/geronimo-jms_1.1_spec-1.1.1.jar:/mnt/hdd2/nosql-prj/YCSB/YCSB/mssql/target/dependency/geronimo-jta_1.1_spec-1.1.1.jar:/mnt/hdd2/nosql-prj/YCSB/YCSB/mssql/target/dependency/HdrHistogram-2.1.9.jar:/mnt/hdd2/nosql-prj/YCSB/YCSB/mssql/target/dependency/htrace-core4-4.2.0-incubating.jar:/mnt/hdd2/nosql-prj/YCSB/YCSB/mssql/target/dependency/mssql-jdbc-6.4.0.jre8.jar:/mnt/hdd2/nosql-prj/YCSB/YCSB/mssql/target/dependency/openjpa-jdbc-2.1.1.jar:/mnt/hdd2/nosql-prj/YCSB/YCSB/mssql/target/dependency/openjpa-kernel-2.1.1.jar:/mnt/hdd2/nosql-prj/YCSB/YCSB/mssql/target/dependency/openjpa-lib-2.1.1.jar:/mnt/hdd2/nosql-prj/YCSB/YCSB/mssql/target/dependency/serp-1.13.1.jar com.yahoo.ycsb.Client -t -db com.yahoo.ycsb.db.JdbcDBClient -s -P /mnt/hdd2/nosql-prj/YCSB/YCSB/mssql/db.properties -P /mnt/hdd2/nosql-prj/YCSB/YCSB/workloads/workloadf -p recordcount=1000 -threads 12 -p operationcount=1000
+Adding shard node URL: jdbc:sqlserver://172.16.13.26:1433;databaseName=ycsb
+Adding shard node URL: jdbc:sqlserver://172.16.13.26:1433;databaseName=ycsb
+Adding shard node URL: jdbc:sqlserver://172.16.13.26:1433;databaseName=ycsb
+Adding shard node URL: jdbc:sqlserver://172.16.13.26:1433;databaseName=ycsb
+Adding shard node URL: jdbc:sqlserver://172.16.13.26:1433;databaseName=ycsb
+Adding shard node URL: jdbc:sqlserver://172.16.13.26:1433;databaseName=ycsb
+Adding shard node URL: jdbc:sqlserver://172.16.13.26:1433;databaseName=ycsb
+Adding shard node URL: jdbc:sqlserver://172.16.13.26:1433;databaseName=ycsb
+Adding shard node URL: jdbc:sqlserver://172.16.13.26:1433;databaseName=ycsb
+Adding shard node URL: jdbc:sqlserver://172.16.13.26:1433;databaseName=ycsb
+Adding shard node URL: jdbc:sqlserver://172.16.13.26:1433;databaseName=ycsb
+Adding shard node URL: jdbc:sqlserver://172.16.13.26:1433;databaseName=ycsb
+Using shards: 1, batchSize:-1, fetchSize: -1
+Using shards: 1, batchSize:-1, fetchSize: -1
+Using shards: 1, batchSize:-1, fetchSize: -1
+Using shards: 1, batchSize:-1, fetchSize: -1
+Using shards: 1, batchSize:-1, fetchSize: -1
+Using shards: 1, batchSize:-1, fetchSize: -1
+Using shards: 1, batchSize:-1, fetchSize: -1
+Using shards: 1, batchSize:-1, fetchSize: -1
+Using shards: 1, batchSize:-1, fetchSize: -1
+Using shards: 1, batchSize:-1, fetchSize: -1
+Using shards: 1, batchSize:-1, fetchSize: -1
+Using shards: 1, batchSize:-1, fetchSize: -1
+[OVERALL], RunTime(ms), 4219
+[OVERALL], Throughput(ops/sec), 237.02299123014933
+[TOTAL_GCS_G1_Young_Generation], Count, 1
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 7
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.16591609386110454
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 1
+[TOTAL_GC_TIME], Time(ms), 7
+[TOTAL_GC_TIME_%], Time(%), 0.16591609386110454
+[READ], Operations, 1000
+[READ], AverageLatency(us), 26908.502
+[READ], MinLatency(us), 968
+[READ], MaxLatency(us), 75327
+[READ], 95thPercentileLatency(us), 52927
+[READ], 99thPercentileLatency(us), 69247
+[READ], Return=OK, 1000
+[READ-MODIFY-WRITE], Operations, 496
+[READ-MODIFY-WRITE], AverageLatency(us), 61327.93951612903
+[READ-MODIFY-WRITE], MinLatency(us), 6596
+[READ-MODIFY-WRITE], MaxLatency(us), 120255
+[READ-MODIFY-WRITE], 95thPercentileLatency(us), 96383
+[READ-MODIFY-WRITE], 99thPercentileLatency(us), 113023
+[CLEANUP], Operations, 12
+[CLEANUP], AverageLatency(us), 213.16666666666666
+[CLEANUP], MinLatency(us), 57
+[CLEANUP], MaxLatency(us), 1449
+[CLEANUP], 95thPercentileLatency(us), 198
+[CLEANUP], 99thPercentileLatency(us), 1449
+[UPDATE], Operations, 496
+[UPDATE], AverageLatency(us), 33321.12903225807
+[UPDATE], MinLatency(us), 4328
+[UPDATE], MaxLatency(us), 73343
+[UPDATE], 95thPercentileLatency(us), 51039
+[UPDATE], 99thPercentileLatency(us), 59295
+[UPDATE], Return=OK, 496

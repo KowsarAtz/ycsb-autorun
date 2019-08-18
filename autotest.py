@@ -1,5 +1,6 @@
 import pymongo
 import pymssql
+import MySQLdb
 import os
 import re
 from definereqs import definereqs
@@ -34,6 +35,10 @@ def run_wlcmd(dbtype, workload, recordcount, operationcount, threadcount, runnum
     elif dbtype == MSSQL:
         dbname = "mssql"
         cmd += " mssql -s -P " + BASEPATH + "mssql/db.properties"
+    elif dbtype == MARIADB:
+        dbname = "mariadb"
+        cmd += " jdbc -s -P " + BASEPATH + "jdbc/db.properties"
+
     cmd += " -P " + BASEPATH + "workloads/workload" + workload + \
         " -p recordcount=" + str(recordcount) + " -threads " + str(threadcount)
 
@@ -60,6 +65,8 @@ def calmeans(dbtype, workload, recordcount, operationcount, threadcount):
         dbname = "mongodb"
     elif dbtype == MSSQL:
         dbname = "mssql"
+    elif dbtype == MARIADB:
+        dbname = "mariadb"
     resultpath = RESULTPATH + dbname + "/" + \
         workload + "/" + "rc" + str(recordcount) + "-"
     resultpath += "op" + str(operationcount) + "/"
@@ -94,6 +101,10 @@ def clear_database(dbtype):
         cursor.execute("DELETE FROM [%s].[dbo].[%s]" %
                        (SQL_EXPORT_DB, RECORDS_COL))
         mssql_connection.commit()
+    elif dbtype == MARIADB:
+        cursor = mysql_connection.cursor()
+        cursor.execute("DELETE FROM " + RECORDS_COL)
+        mysql_connection.commit()
     return
 
 
@@ -109,6 +120,8 @@ for db in DBS:
         mongodb_client = pymongo.MongoClient(MONGO_URL)
     elif db == MONGODB_CLUSTER:
         mongodb_client = pymongo.MongoClient(MONGO_CLUSTER_URL)
+    elif db == MARIADB:
+        mysql_connection = MySQLdb.connect(host='localhost', user="root", passwd="password", db=SQL_EXPORT_DB)
     for wl in WORKLOADS:
         REQS = definereqs(wl)[0]
         REQS2 = definereqs(wl)[1]

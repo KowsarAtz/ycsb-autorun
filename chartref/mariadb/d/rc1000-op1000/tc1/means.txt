@@ -1,0 +1,7 @@
+       | Throughput            |  2193.0
+READ   | AverageLatency        |  122.9
+READ   | 95thPercentileLatency |  192.0
+READ   | 99thPercentileLatency |  272.0
+INSERT | AverageLatency        |  2787.7
+INSERT | 95thPercentileLatency |  3787.0
+INSERT | 99thPercentileLatency |  4639.0

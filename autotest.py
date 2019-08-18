@@ -22,10 +22,15 @@ def run_wlcmd(dbtype, workload, recordcount, operationcount, threadcount, runnum
     dbname = None
     if dbtype == MONGODB or dbtype == MONGODB_CLUSTER:
         dbname = "mongodb"
-        if dbtype == MONGODB:
-            cmd += " mongodb-async -s -p mongodb.url=" + MONGO_URL
+        driver_type = None
+        if SYNC_ASYNC == 0:
+            driver_type = "mongodb"
         else:
-            cmd += " mongodb-async -s -p mongodb.url=" + MONGO_CLUSTER_URL
+            driver_type = "mongodb-async"
+        if dbtype == MONGODB:
+            cmd += " "+driver_type+" -s -p mongodb.url=" + MONGO_URL
+        else:
+            cmd += " "+driver_type+" -s -p mongodb.url=" + MONGO_CLUSTER_URL
     elif dbtype == MSSQL:
         dbname = "mssql"
         cmd += " mssql -s -P " + BASEPATH + "mssql/db.properties"

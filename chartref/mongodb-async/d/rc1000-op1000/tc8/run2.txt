@@ -1,0 +1,33 @@
+/usr/lib/jvm/java-11-openjdk-11.0.4.11-0.el7_6.x86_64//bin/java  -classpath /mnt/hdd2/nosql-prj/YCSB/YCSB/conf:/mnt/hdd2/nosql-prj/YCSB/YCSB/core/target/core-0.17.0-SNAPSHOT.jar:/mnt/hdd2/nosql-prj/YCSB/YCSB/mongodb/target/mongodb-binding-0.17.0-SNAPSHOT.jar:/mnt/hdd2/nosql-prj/YCSB/YCSB/mongodb/target/dependency/HdrHistogram-2.1.9.jar:/mnt/hdd2/nosql-prj/YCSB/YCSB/mongodb/target/dependency/htrace-core4-4.2.0-incubating.jar:/mnt/hdd2/nosql-prj/YCSB/YCSB/mongodb/target/dependency/logback-classic-1.1.2.jar:/mnt/hdd2/nosql-prj/YCSB/YCSB/mongodb/target/dependency/logback-core-1.1.2.jar:/mnt/hdd2/nosql-prj/YCSB/YCSB/mongodb/target/dependency/mongodb-async-driver-2.0.1.jar:/mnt/hdd2/nosql-prj/YCSB/YCSB/mongodb/target/dependency/mongo-java-driver-3.8.0.jar:/mnt/hdd2/nosql-prj/YCSB/YCSB/mongodb/target/dependency/slf4j-api-1.7.25.jar:/mnt/hdd2/nosql-prj/YCSB/YCSB/mongodb/target/dependency/snappy-java-1.1.7.1.jar com.yahoo.ycsb.Client -t -db com.yahoo.ycsb.db.AsyncMongoDbClient -s -p mongodb.url=mongodb://172.16.13.26:27023 -P /mnt/hdd2/nosql-prj/YCSB/YCSB/workloads/workloadd -p recordcount=1000 -threads 8 -p operationcount=1000
+mongo connection created with mongodb://172.16.13.26:27023
+[OVERALL], RunTime(ms), 181
+[OVERALL], Throughput(ops/sec), 5524.861878453039
+[TOTAL_GCS_G1_Young_Generation], Count, 1
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 7
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 3.867403314917127
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 1
+[TOTAL_GC_TIME], Time(ms), 7
+[TOTAL_GC_TIME_%], Time(%), 3.867403314917127
+[READ], Operations, 942
+[READ], AverageLatency(us), 1018.7823779193205
+[READ], MinLatency(us), 137
+[READ], MaxLatency(us), 37439
+[READ], 95thPercentileLatency(us), 2875
+[READ], 99thPercentileLatency(us), 11231
+[READ], Return=OK, 942
+[CLEANUP], Operations, 8
+[CLEANUP], AverageLatency(us), 247.25
+[CLEANUP], MinLatency(us), 0
+[CLEANUP], MaxLatency(us), 1971
+[CLEANUP], 95thPercentileLatency(us), 1971
+[CLEANUP], 99thPercentileLatency(us), 1971
+[INSERT], Operations, 58
+[INSERT], AverageLatency(us), 1699.3793103448277
+[INSERT], MinLatency(us), 365
+[INSERT], MaxLatency(us), 9551
+[INSERT], 95thPercentileLatency(us), 4183
+[INSERT], 99thPercentileLatency(us), 4727
+[INSERT], Return=OK, 58

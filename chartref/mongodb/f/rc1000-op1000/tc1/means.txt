@@ -1,0 +1,7 @@
+                  | Throughput            |  1285.9
+READ              | AverageLatency        |  285.5
+READ              | 95thPercentileLatency |  455.3
+READ              | 99thPercentileLatency |  590.3
+READ-MODIFY-WRITE | AverageLatency        |  577.0
+READ-MODIFY-WRITE | 95thPercentileLatency |  906.7
+READ-MODIFY-WRITE | 99thPercentileLatency |  1118.0

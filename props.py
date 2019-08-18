@@ -29,10 +29,10 @@ RUNS_NO = 3
 LOAD_TC = 8
 
 CHARTRESULTPATH = "./chart-results/"
-CHARTSREFRENCE = "./ycsb-results-bothok-singlemongoMSSQL/"
+CHARTSREFRENCE = "./chartref/"
 CHARTSWLSREFRENCE = ['a', 'b', 'c', 'd', 'e', 'f']
 CHARTCOUNTSREFRENCE = [(1000,1000)]
-CHARTTHREADCOUNTS = [1, 2]
+CHARTTHREADCOUNTS = [1]
 CHARTWIDTH = 1000
 CHARTHEIGHT = 500
-COMPARINGDBS_SET = [['mssql', 'mongodb']]
+COMPARINGDBS_SET = [['mssql', 'mongodb', 'mongodb-async', 'mongodbcluster1', 'mongodbcluster1-async']]

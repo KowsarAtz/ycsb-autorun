@@ -27,8 +27,7 @@ WORKLOADS = ['a', 'b', 'c', 'd', 'e', 'f']
 RC_OP_COUPLES = [(1000, 1000)]
 # THREADS_NO = [1, 2, 4, 8, 12, 16]
 THREADS_NO = [1]
-# RUNS_NO = 3
-RUNS_NO = 1
+RUNS_NO = 3
 LOAD_TC = 8
 
 CHARTRESULTPATH = "./chart-results/"

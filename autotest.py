@@ -38,9 +38,15 @@ def run_wlcmd(dbtype, workload, recordcount, operationcount, threadcount, runnum
     elif dbtype == MARIADB:
         dbname = "mariadb"
         cmd += " jdbc -s -P " + BASEPATH + "jdbc/db.properties"
+    elif dbtype == ELASTIC5:
+        dbname = "elastic5"
+        cmd += " elasticsearch5-rest"
 
     cmd += " -P " + BASEPATH + "workloads/workload" + workload + \
-        " -p recordcount=" + str(recordcount) + " -threads " + str(threadcount)
+        " -p recordcount=" + str(recordcount) 
+    
+    if dbtype !=ELASTIC5:
+        cmd += " -threads " + str(threadcount)
 
     if cmdtype == RUN:
         cmd += " -p operationcount=" + str(operationcount)
@@ -67,6 +73,8 @@ def calmeans(dbtype, workload, recordcount, operationcount, threadcount):
         dbname = "mssql"
     elif dbtype == MARIADB:
         dbname = "mariadb"
+    elif dbtype == ELASTIC5:
+        dbname = "elastic5"
     resultpath = RESULTPATH + dbname + "/" + \
         workload + "/" + "rc" + str(recordcount) + "-"
     resultpath += "op" + str(operationcount) + "/"
@@ -105,6 +113,8 @@ def clear_database(dbtype):
         cursor = mysql_connection.cursor()
         cursor.execute("DELETE FROM " + RECORDS_COL)
         mysql_connection.commit()
+    elif dbtype == ELASTIC5:
+        os.system("curl -XDELETE localhost:9200/es.ycsb")
     return
 
 

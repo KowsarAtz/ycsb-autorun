@@ -143,7 +143,7 @@ for db in DBS:
             for thrd in THREADS_NO:
                 for run in range(1, RUNS_NO+1):
                     run_wlcmd(db, wl, rc_count, op_count, thrd, run)
-                    if wl == 'd' or wl == 'e':
+                    if wl == 'd' or wl == 'e' or wl == 'D':
                         clear_database(db)
                         run_wlcmd(db, wl, rc_count, None, LOAD_TC, 0)
                 calmeans(db, wl, rc_count, op_count, thrd)

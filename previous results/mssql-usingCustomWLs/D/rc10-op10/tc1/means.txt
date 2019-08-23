@@ -1,0 +1,4 @@
+         | Throughput            |  9.5
+INSERT   | AverageLatency        |  63529.6
+INSERT   | 95thPercentileLatency |  116351.0
+INSERT   | 99thPercentileLatency |  116351.0

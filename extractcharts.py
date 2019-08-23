@@ -69,30 +69,16 @@ def dbcompare_createchart(resultsbasepath, databases, workload, rccount, opcount
     save_png(resultsfilepath, all_results[4][0][0]+'.png', dbscomparefigure(
         databases, names, values, all_results[4][0][0] + ' (us)', 'Workload'+workload+" | Records = " + str(rccount) + " | Operations = "+str(opcount)), CHARTWIDTH, CHARTHEIGHT)
 
+def recordeffectfigure(databases, values_names, values, values_title, chart_title):
+    pass
+
+def recordsizeeffect_createchart(resultsbasepath, databases, workload, thrdcount, rec_op_set):
+    pass
 
 for comparing_dbs in COMPARINGDBS_SET:
     for wl in CHARTSWLSREFRENCE:
-        for (reccount, opcount) in CHARTCOUNTSREFRENCE:
-            for thrd in CHARTTHREADCOUNTS:
+        for thrd in CHARTTHREADCOUNTS:
+            for (reccount, opcount) in CHARTCOUNTSREFRENCE:
                 dbcompare_createchart(
                     CHARTSREFRENCE, comparing_dbs, wl, reccount, opcount, thrd)
-
-
-
-# dbcompare_createchart('./ycsb-results-bothok-singlemongoMSSQL/', COMPARINGDBS, 'b', 1000, 1000, 1)
-# resultsbasepath = CHARTRESULTPATH
-# databases = COMPARINGDBS
-# workload = 'a'
-# rccount = opcount = 1000
-# dbcompare_createchart('./ycsb-results-bothok-singlemongoMSSQL/', COMPARINGDBS, 'a', 1000, 1000, 4)
-# for item in meansfilenumbers('./ycsb-results-mssqlok', 'mssql', 'e', 1000, 1000, 4):
-#     print(item[0][0], item[0][1], item[1])
-'''
-- Throughput 765.1
-SCAN AverageLatency 3166.4
-SCAN 95thPercentileLatency 8216.3
-SCAN 99thPercentileLatency 17151.0
-INSERT AverageLatency 9026.2
-INSERT 95thPercentileLatency 17567.0
-INSERT 99thPercentileLatency 27636.3
-'''
+        recordsizeeffect_createchart(CHARTSREFRENCE, comparing_dbs, wl, thrd, CHARTCOUNTSREFRENCE)

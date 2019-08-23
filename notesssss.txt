@@ -1,0 +1,3 @@
+
+- keep an eye on proc/meminfo while starting modules
+- decide on whether you are going to test all cluster archiectures in this way too.

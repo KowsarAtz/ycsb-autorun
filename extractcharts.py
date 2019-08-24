@@ -69,11 +69,33 @@ def dbcompare_createchart(resultsbasepath, databases, workload, rccount, opcount
     save_png(resultsfilepath, all_results[4][0][0]+'.png', dbscomparefigure(
         databases, names, values, all_results[4][0][0] + ' (us)', 'Workload'+workload+" | Records = " + str(rccount) + " | Operations = "+str(opcount)), CHARTWIDTH, CHARTHEIGHT)
 
-def recordeffectfigure(databases, values_names, values, values_title, chart_title):
-    pass
+def recordeffectfigure(databases, records, values, values_title, chart_title):
+    dt = []
+    for i in range(0, len(values)):
+        dt += [go.Scatter(x=records, y=values[i], name=databases[i])]
+    figure = go.Figure(data=dt)
+    figure.update_xaxes(title_text="<b>Records/Opertation Count</b>")
+    figure.update_yaxes(title_text="<b>%s</b>" % values_title)
+    figure.update_layout(title_text="<b>%s</b>" % chart_title)
+    return figure
 
-def recordsizeeffect_createchart(resultsbasepath, databases, workload, thrdcount, rec_op_set):
-    pass
+def recordsizeeffectonthroughput_createchart(resultsbasepath, databases, workload, thrdcount, rec_op_set):
+    meanfilepath = None
+    resultsfilepath = CHARTRESULTPATH
+    for db in databases:
+        resultsfilepath += (db + '-')
+    resultsfilepath = list(resultsfilepath)
+    resultsfilepath[-1] = '/'
+    resultsfilepath = ''.join(resultsfilepath)
+    resultsfilepath = resultsfilepath + workload + '/' + 'tc-' + str(thrdcount) + '/'
+    x = []    
+    y = []
+    for i in range(0, len(databases)):
+        y += [[]]
+        for (rec, op) in rec_op_set:
+            x += [rec]
+            y[i] += [op*1000/meansfilenumbers(CHARTSREFRENCE, databases[i], workload, rec, op, thrdcount)[0][1]]
+    save_png(resultsfilepath, 'exectimeVSopcount.png', recordeffectfigure(databases, x, y, 'Total Execution Time (ms)', 'Workload'+wl), CHARTWIDTH, CHARTHEIGHT)
 
 for comparing_dbs in COMPARINGDBS_SET:
     for wl in CHARTSWLSREFRENCE:
@@ -81,4 +103,4 @@ for comparing_dbs in COMPARINGDBS_SET:
             for (reccount, opcount) in CHARTCOUNTSREFRENCE:
                 dbcompare_createchart(
                     CHARTSREFRENCE, comparing_dbs, wl, reccount, opcount, thrd)
-        recordsizeeffect_createchart(CHARTSREFRENCE, comparing_dbs, wl, thrd, CHARTCOUNTSREFRENCE)
+        recordsizeeffectonthroughput_createchart(CHARTSREFRENCE, comparing_dbs, wl, thrd, CHARTCOUNTSREFRENCE)

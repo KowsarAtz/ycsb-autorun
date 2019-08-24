@@ -21,40 +21,40 @@ A3 = [
 
 B = [
     'Throughput',
-    'UPDATE.*AverageLatency',
-    'UPDATE.*95thPercentileLatency',
-    'UPDATE.*99thPercentileLatency'
-]
-B2 = [
-    '         | Throughput            | ',
-    'UPDATE   | AverageLatency        | ',
-    'UPDATE   | 95thPercentileLatency | ',
-    'UPDATE   | 99thPercentileLatency | '
-]
-B3 = [
-    ('-','Throughput'),
-    ('UPDATE','AverageLatency'),
-    ('UPDATE','95thPercentileLatency'),
-    ('UPDATE','99thPercentileLatency')
-]
-
-C = [
-    'Throughput',
     'SCAN.*AverageLatency',
     'SCAN.*95thPercentileLatency',
     'SCAN.*99thPercentileLatency'
 ]
-C2 = [
+B2 = [
     '       | Throughput            | ',
     'SCAN   | AverageLatency        | ',
     'SCAN   | 95thPercentileLatency | ',
     'SCAN   | 99thPercentileLatency | '
 ]
-C3 = [
+B3 = [
     ('-','Throughput'),
     ('SCAN','AverageLatency'),
     ('SCAN','95thPercentileLatency'),
     ('SCAN','99thPercentileLatency')
+]
+
+C = [
+    'Throughput',
+    'UPDATE.*AverageLatency',
+    'UPDATE.*95thPercentileLatency',
+    'UPDATE.*99thPercentileLatency'
+]
+C2 = [
+    '         | Throughput            | ',
+    'UPDATE   | AverageLatency        | ',
+    'UPDATE   | 95thPercentileLatency | ',
+    'UPDATE   | 99thPercentileLatency | '
+]
+C3 = [
+    ('-','Throughput'),
+    ('UPDATE','AverageLatency'),
+    ('UPDATE','95thPercentileLatency'),
+    ('UPDATE','99thPercentileLatency')
 ]
 
 D = [

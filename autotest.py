@@ -114,7 +114,7 @@ def clear_database(dbtype):
         cursor.execute("DELETE FROM " + RECORDS_COL)
         mysql_connection.commit()
     elif dbtype == ELASTIC5:
-        os.system("curl -XDELETE localhost:9200/es.ycsb")
+        os.system('curl -XDELETE "http://%s:9200/es.ycsb/"' % HOSTIP)
     return
 
 

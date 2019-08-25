@@ -5,7 +5,7 @@ MONGODB_CLUSTER = 1
 MSSQL = 2
 MARIADB = 3
 ELASTIC5 = 4
-SYNC_ASYNC = 0
+DIFFERENT_LOADS = 1
 
 REQS = None
 REQS2 = None
@@ -26,12 +26,14 @@ MSSQLUSER = 'sa'
 MSSQLPWD = 'MSSql-pwd'
 # MSSQLPWD = 'MSSQL-pwd'
 
-DBS = [MSSQL, MARIADB, MONGODB, ELASTIC5]
+DBS = [MSSQL, MARIADB, MONGODB, MONGODB, ELASTIC5]
+# DBS = [MONGODB, MONGODB]
 WORKLOADS = ['A', 'B']
 RC_OP_COUPLES = [(1000, 1000),(10000,10000),(100000,100000)]
-THREADS_NO = [1]
+# RC_OP_COUPLES = [(8,8),(10,10)]
+THREADS_NO = [1,2,4,8]
 RUNS_NO = 5
-LOAD_TC = 1
+LOAD_TC = 4
 
 CHARTRESULTPATH = "./chart-results/"
 CHARTSREFRENCE = "./ycsb-results/"
@@ -40,4 +42,5 @@ CHARTCOUNTSREFRENCE = RC_OP_COUPLES
 CHARTTHREADCOUNTS = THREADS_NO
 CHARTWIDTH = 1000
 CHARTHEIGHT = 500
-COMPARINGDBS_SET = [['mssql', 'mariadb', 'mongodb', 'mongodb-async', 'elastic5']]
+COMPARINGDBS_SET = [['mssql','mariadb', 'mongodb', 'mongodb-async', 'elastic5']]
+# COMPARINGDBS_SET = [['mongodb', 'mongodb-async']]

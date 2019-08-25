@@ -6,6 +6,7 @@ import re
 from definereqs import definereqs
 from props import *
 
+SYNC_ASYNC = 0
 
 def run_wlcmd(dbtype, workload, recordcount, operationcount, threadcount, runnumber):
     cmd = BASEPATH
@@ -32,6 +33,7 @@ def run_wlcmd(dbtype, workload, recordcount, operationcount, threadcount, runnum
             cmd += " "+driver_type+" -s -p mongodb.url=" + MONGO_URL
         else:
             cmd += " "+driver_type+" -s -p mongodb.url=" + MONGO_CLUSTER_URL
+        dbname = driver_type
     elif dbtype == MSSQL:
         dbname = "mssql"
         cmd += " mssql -s -P " + BASEPATH + "mssql/db.properties"
@@ -68,7 +70,11 @@ def run_wlcmd(dbtype, workload, recordcount, operationcount, threadcount, runnum
 def calmeans(dbtype, workload, recordcount, operationcount, threadcount):
     dbname = None
     if dbtype == MONGODB or dbtype == MONGODB_CLUSTER:
-        dbname = "mongodb"
+        global SYNC_ASYNC
+        if SYNC_ASYNC == 0:
+            dbname = "mongodb"
+        else:
+            dbname = "mongodb-async"
     elif dbtype == MSSQL:
         dbname = "mssql"
     elif dbtype == MARIADB:
@@ -117,11 +123,6 @@ def clear_database(dbtype):
         os.system('curl -XDELETE "http://%s:9200/es.ycsb/"' % HOSTIP)
     return
 
-
-def remove_extras(dbtype, rc_count):
-    pass
-
-
 for db in DBS:
     if db == MSSQL:
         mssql_connection = pymssql.connect(
@@ -135,15 +136,21 @@ for db in DBS:
     for wl in WORKLOADS:
         REQS = definereqs(wl)[0]
         REQS2 = definereqs(wl)[1]
+        if DIFFERENT_LOADS == 0:
+            clear_database(db)
+            run_wlcmd(db, wl, rc_count, None, LOAD_TC, 0)
         for rc_op in RC_OP_COUPLES:
             rc_count = rc_op[0]
             op_count = rc_op[1]
-            clear_database(db)
-            run_wlcmd(db, wl, rc_count, None, LOAD_TC, 0)
+            if DIFFERENT_LOADS == 1:
+                clear_database(db)
+                run_wlcmd(db, wl, rc_count, None, LOAD_TC, 0)
             for thrd in THREADS_NO:
                 for run in range(1, RUNS_NO+1):
                     run_wlcmd(db, wl, rc_count, op_count, thrd, run)
-                    if wl == 'd' or wl == 'e' or wl == 'D':
+                    if DIFFERENT_LOADS == 1 and (wl == 'd' or wl == 'e' or wl == 'D'):
                         clear_database(db)
                         run_wlcmd(db, wl, rc_count, None, LOAD_TC, 0)
                 calmeans(db, wl, rc_count, op_count, thrd)
+    if db == MONGODB:
+        SYNC_ASYNC = 1

@@ -40,4 +40,4 @@ CHARTCOUNTSREFRENCE = RC_OP_COUPLES
 CHARTTHREADCOUNTS = THREADS_NO
 CHARTWIDTH = 1000
 CHARTHEIGHT = 500
-COMPARINGDBS_SET = [['mssql', 'mariadb', 'mongodb', 'elastic5']]
+COMPARINGDBS_SET = [['mssql', 'mariadb', 'mongodb', 'mongodb-async', 'elastic5']]

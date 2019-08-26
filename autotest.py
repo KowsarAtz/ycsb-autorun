@@ -47,8 +47,9 @@ def run_wlcmd(dbtype, workload, recordcount, operationcount, threadcount, runnum
     cmd += " -P " + BASEPATH + "workloads/workload" + workload + \
         " -p recordcount=" + str(recordcount) 
     
-    if dbtype !=ELASTIC5:
-        cmd += " -threads " + str(threadcount)
+    # if dbtype !=ELASTIC5:
+    #     cmd += " -threads " + str(threadcount)
+    cmd += " -threads " + str(threadcount)
 
     if cmdtype == RUN:
         cmd += " -p operationcount=" + str(operationcount)
@@ -138,6 +139,7 @@ for db in DBS:
         REQS2 = definereqs(wl)[1]
         if DIFFERENT_LOADS == 0:
             clear_database(db)
+            print("db cleared")
             run_wlcmd(db, wl, rc_count, None, LOAD_TC, 0)
         for rc_op in RC_OP_COUPLES:
             rc_count = rc_op[0]
